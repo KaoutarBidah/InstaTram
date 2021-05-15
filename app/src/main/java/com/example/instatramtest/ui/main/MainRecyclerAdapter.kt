@@ -20,7 +20,7 @@ class MainRecyclerAdapter (val context: Context, var clickListner: OnStationItem
     override fun onBindViewHolder(holder: ViewHolder, position: Int)  {
         val station = stations[position]
         with(holder) {
-            btn?.let {
+            btn.let {
                 it.text = station.name
                 it.setOnClickListener{
                     clickListner.onItemClick(station,position)
@@ -32,7 +32,7 @@ class MainRecyclerAdapter (val context: Context, var clickListner: OnStationItem
         }
     }
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        val btn: Button = itemView.findViewById<Button>(R.id.btn)
+        val btn: Button = itemView.findViewById(R.id.btn)
     }
 }
 

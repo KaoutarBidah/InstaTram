@@ -1,5 +1,6 @@
 package com.example.instatramtest.ui.main
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,25 +12,22 @@ import com.example.instatramtest.R
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.instatramtest.data.Station
+import com.example.instatramtest.img.img_activity
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
+@Suppress("DEPRECATION")
 class HomeFragment : Fragment() ,OnStationItemClickListner{
     private lateinit var viewModel: PageViewModel
 
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
     private lateinit var recyclerView: RecyclerView
 
+    @SuppressLint("FragmentLiveDataObserve")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,7 +38,7 @@ class HomeFragment : Fragment() ,OnStationItemClickListner{
 
         viewModel = ViewModelProviders.of(this).get(PageViewModel::class.java)
 
-        viewModel.StationData.observe(viewLifecycleOwner, Observer
+        viewModel.StationData.observe(this, Observer
         {
             val adapter = MainRecyclerAdapter(requireContext(),this ,it)
             recyclerView.adapter = adapter
@@ -50,7 +48,7 @@ class HomeFragment : Fragment() ,OnStationItemClickListner{
         return view
     }
     override fun onItemClick(item: Station, position: Int) {
-        val intent = Intent(context,image_activity::class.java)
+        val intent = Intent(context,img_activity::class.java)
         intent.putExtra("name", item.name)
         startActivity(intent)
 
@@ -63,8 +61,6 @@ class HomeFragment : Fragment() ,OnStationItemClickListner{
         ) =
             HomeFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }
