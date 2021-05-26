@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1096435411134",
+    "project_id": "instatramtest-3b221",
+    "storage_bucket": "instatramtest-3b221.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096435411134:android:3d6e472a2ce7db78dd16ef",
+        "android_client_info": {
+          "package_name": "com.example.instatramtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096435411134-vaqf34ts7kiiuu741o9ni811r8ac70tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7OM5JSKnoHBoWqKT7h8CUyZozQwFAlf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096435411134-vaqf34ts7kiiuu741o9ni811r8ac70tp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
