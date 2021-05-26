@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.instatramtest.ui.main
 
 import android.annotation.SuppressLint
@@ -9,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instatramtest.R
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.instatramtest.data.Station
 import com.example.instatramtest.img.img_activity
@@ -38,8 +39,7 @@ class HomeFragment : Fragment() ,OnStationItemClickListner{
 
         viewModel = ViewModelProviders.of(this).get(PageViewModel::class.java)
 
-        viewModel.StationData.observe(this, Observer
-        {
+        viewModel.StationData.observe(this, {
             val adapter = MainRecyclerAdapter(requireContext(),this ,it)
             recyclerView.adapter = adapter
 

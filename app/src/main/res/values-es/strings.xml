@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InstaTram</string>
+    <string name="tab_text_1">Casa</string>
+    <string name="tab_text_2">Mapa</string>
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="welcome_to_barcelone">Bienvenidos a Barcelona</string>
+    <string name="todo">TODO</string>
+    <string name="start_the_app">Inicie la aplicación</string>
+</resources>
